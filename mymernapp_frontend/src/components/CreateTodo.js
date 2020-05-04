@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 
 class CreateTodo extends Component {
     constructor(props){
@@ -22,6 +23,18 @@ class CreateTodo extends Component {
         e.preventDefault()
         console.log('Form submitted:')
         console.table([this.state])
+        
+        const newTodo = this.state
+
+        axios.post('http://localhost:4000/todos/add',newTodo)
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => {
+            if(err.response){
+                console.log('error occured')
+            }
+        })
 
         this.setState({
             todo_description: '',
@@ -31,7 +44,7 @@ class CreateTodo extends Component {
         })
     }
     render(){
-        const {todo_description,todo_responsible,todo_priority,todo_completed} = this.state
+        const {todo_description,todo_responsible,todo_priority} = this.state
         return(
           <div style ={{marginTop: 20}} className="container">
               <h3>Create New Todo</h3>
