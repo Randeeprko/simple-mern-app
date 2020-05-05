@@ -5,9 +5,9 @@ import axios from 'axios'
 const Todo = (props) => {
         return(
             <tr>
-              <td>{props.todo.todo_description}</td>
-              <td>{props.todo.todo_responsible}</td>
-              <td>{props.todo.todo_priority}</td>
+              <td className={props.todo.todo_completed ? 'completed': ''}>{props.todo.todo_description}</td>
+              <td className={props.todo.todo_completed ? 'completed': ''}>{props.todo.todo_responsible}</td>
+              <td className= {props.todo.todo_completed ? 'completed': ''}>{props.todo.todo_priority}</td>
               <td>
                   <Link to = {'/edit/'+ props.todo._id} >Edit </Link>
               </td>
@@ -15,6 +15,8 @@ const Todo = (props) => {
         )
 }
 class TodosList extends Component {
+    _isMounted = false
+
     constructor(props){
         super(props)
         this.state ={
@@ -23,13 +25,21 @@ class TodosList extends Component {
     }
     
     componentDidMount(){
+        this._isMounted= true
         axios.get('http://localhost:4000/todos')
         .then(res => {
+            if(this._isMounted){
             this.setState({todos: res.data})
-            console.log(res.data)
+            console.log(res.data) }
         })
         .catch(err => console.log(err))
+        .finally(() => console.log('mounted'))
     }
+
+    componentWillUnmount(){
+        this._isMounted = false
+    }
+
 
     todoList = () => {
         return this.state.todos.map( (currentTodo,i) => {

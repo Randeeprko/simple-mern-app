@@ -47,7 +47,7 @@ class CreateTodo extends Component {
         const {todo_description,todo_responsible,todo_priority} = this.state
         return(
           <div style ={{marginTop: 20}} className="container">
-              <h3>Create New Todo</h3>
+              <h3 className="text-center">Create New Todo</h3>
               <form onSubmit = {this.handleSubmit}>
                   <div className="form-group">
                       <label>Description:</label>
