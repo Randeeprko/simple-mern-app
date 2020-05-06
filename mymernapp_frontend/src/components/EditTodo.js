@@ -45,14 +45,13 @@ class EditTodo extends Component {
         axios.post('http://localhost:4000/todos/update/'+this.props.match.params.id, updateTodo)
         .then(res => {
             console.log(res.data)
+            this.props.history.push('/')
         })
         .catch(err => {
             if(err.response){
                 console.log(err.response.data)
             }
         })
-
-        this.props.history.push('/')
 
     }
     

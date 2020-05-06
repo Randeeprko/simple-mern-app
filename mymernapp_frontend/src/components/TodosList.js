@@ -25,17 +25,15 @@ class TodosList extends Component {
     }
     
     componentDidMount(){
-        this._isMounted= true
+        this._isMounted = true
         axios.get('http://localhost:4000/todos')
         .then(res => {
-            if(this._isMounted){
             this.setState({todos: res.data})
-            console.log(res.data) }
+            console.log(res.data)
         })
         .catch(err => console.log(err))
-        .finally(() => console.log('mounted'))
     }
-
+  
     componentWillUnmount(){
         this._isMounted = false
     }
