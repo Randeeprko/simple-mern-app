@@ -9,6 +9,7 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "lodash": "^4.17.20",
+    "mquery": "^3.2.3",
     "object-path": "^0.11.5",
     "postcss-media-minmax": "^4.0.0",
     "react": "^16.13.1",
