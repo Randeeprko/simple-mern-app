@@ -9,7 +9,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "immer": "^8.0.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "mquery": "^3.2.3",
     "node-notifier": "^9.0.0",
     "object-path": "^0.11.5",
