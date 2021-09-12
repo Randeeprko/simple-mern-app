@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^12.1.5",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
-    "immer": "^8.0.1",
+    "immer": "^9.0.6",
     "lodash": "^4.17.21",
     "mquery": "^3.2.3",
     "node-notifier": "^9.0.0",
