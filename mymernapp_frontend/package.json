@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^12.1.5",
     "ansi-regex": "^5.0.1",
     "axios": "^1.7.4",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^5.0.0",
     "immer": "^9.0.6",
     "is-svg": "^4.4.0",
     "json-schema": "^0.4.0",
